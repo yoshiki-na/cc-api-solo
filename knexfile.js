@@ -6,31 +6,43 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-  // development: {
-  //   client: "postgresql",
-  //   connection: {
-  //     filename: "./dev.sqlite3",
-  //   },
-  // },
+  development: {
+    client: "postgresql",
+    connection: {
+      database: "rm_library",
+      user: "oh-nakamura",
+      password: "password",
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
+  },
 
-  // staging: {
-  client: "postgresql",
-  connection: {
-    database: "rm_library",
-    user: "oh-nakamura",
-    password: "password",
+  staging: {
+    client: "postgresql",
+    connection: {
+      database: "rm_library",
+      user: "oh-nakamura",
+      password: "password",
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
   },
-  pool: {
-    min: 2,
-    max: 10,
-  },
-  migrations: {
-    directory: "./db/migrations",
-  },
-  seeds: {
-    directory: "./db/seeds",
-  },
-  // },
 
   // production: {
   //   client: "postgresql",

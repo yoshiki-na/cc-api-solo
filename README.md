@@ -31,3 +31,14 @@ My first solo project
 
 - GET /api/books/recommender/:name - 本の一覧から、特定の推薦者が推薦した本を抜粋し、JSON で返す（SELECT）
 - PATCH /api/books/:idOrName - 対象の本の情報を、JSON で渡した body に部分更新（UPDATE）
+
+# DB 設定
+
+- createdb rm_library
+- npm run migrate
+- npm run seed
+
+# テストコードについて
+
+npm run test で実行可能
+HTTP サーバは自動で終了しないため、ctrl+c で終了させる必要あり
