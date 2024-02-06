@@ -4,11 +4,12 @@
   "description": "My first solo project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test",
     "makemigrate": "npx knex migrate:make",
     "migrate": "npx knex migrate:latest",
     "makeseed": "npx knex seed:make",
-    "seed": "npx knex seed:run"
+    "seed": "npx knex seed:run",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,11 @@
     "knex": "^3.1.0",
     "node": "^21.6.1",
     "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^3.0.3"
   }
 }
