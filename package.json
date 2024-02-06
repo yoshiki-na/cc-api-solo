@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "makemigrate": "npx knex migrate:make",
     "migrate": "npx knex migrate:latest",
-    "make": "npx knex migrate:make",
-    "seed": "knex seed:run"
+    "makeseed": "npx knex seed:make",
+    "seed": "npx knex seed:run"
   },
   "keywords": [],
   "author": "",

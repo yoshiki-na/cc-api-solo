@@ -13,9 +13,9 @@ exports.up = function (knex) {
    */
   return knex.schema.createTable("books", function (table) {
     table.increments("id").primary();
-    table.string("name", 100);
-    table.string("genre", 100);
-    table.string("recommender_name", 255);
+    table.string("name", 100).unique().notNullable();
+    table.string("genre", 100).notNullable();
+    table.string("recommender_name", 255).notNullable();
     table.string("recommender_memo", 255);
   });
 };

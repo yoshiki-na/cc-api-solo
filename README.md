@@ -9,13 +9,13 @@ My first solo project
 
 # DB 設計
 
-- DB 名：rml
+- DB 名：rm_library
 - テーブル名：books
 
-* id increment
-* name varchar (100)
-* genre varchar (100)
-* recommender_name varchar (100)
+* id increments, PK
+* name varchar (100) , unique, notnull
+* genre varchar (100), notnull
+* recommender_name varchar (100), notnull
 * recommender_memo varchar (255)
 
 # エンドポイント設計
