@@ -12,13 +12,13 @@ const table = "books";
 
 server.get("/api/books", async (req, res) => {
   const books = await db.select("*").from(table); //JSON in array
-  res.status(200).send(books); // sendでなくjsonでも同じ？
+  res.status(200).json(books); // jsonでなくsendでも同じ？
 });
 
 server.post("/api/books", async (req, res) => {
   const request = req.body; //JSON in array
   await db.insert(request).into(table);
-  res.status(201).send(); // sendでなくjsonでも同じ？
+  res.status(201).send();
 });
 
 server.put("/api/books/:idOrName", async (req, res) => {

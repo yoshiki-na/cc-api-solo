@@ -1,0 +1,57 @@
+## Demo Procedure
+
+# 1: Browser access(GET)
+# http://localhost:3000/api/books
+# -> assume to JSON of 5 books
+
+# 2-1: Postman POST a book to add to library
+# http://localhost:3000/api/books
+# "Body" -> "raw" -> "JSON" -> below book
+{
+  "id": 100,
+  "name": "sample for test",
+  "genre": "test",
+  "recommender_name": "test"
+}
+# 2-2: Browser reload(GET)
+# -> assume to JSON of 6 books including id:100
+
+# 3-1: Postman PUT a book to update by ID
+# http://localhost:3000/api/books/100
+# "Body" -> "raw" -> "JSON" -> below book
+{
+  "id": 200,
+  "name": "SAMPLE FOR TEST",
+  "genre": "TEST",
+  "recommender_name": "TEST"
+}
+
+# 3-2: Browser reload(GET)
+# -> assume to JSON of 6 books including id:200, excluding id:100
+
+# 4-1: Postman PUT a book to update by NAME
+# http://localhost:3000/api/books/SAMPLE%20FOR%20TEST
+# "Body" -> "raw" -> "JSON" -> below book
+{
+  "id": 100,
+  "name": "sample for test",
+  "genre": "test",
+  "recommender_name": "test"
+}
+
+# 4-2: Browser reload(GET)
+# -> assume to JSON of 6 books including "sample for test", excluding id:"SAMPLE FOR TEST"
+
+# 5-1: Postman DELETE a book to update by ID
+# http://localhost:3000/api/books/100
+
+# 5-2: Browser reload(get)
+# -> assume to JSON of 5 books excluding id:100
+
+# 6-1: Postman DELETE a book to update by ID
+# http://localhost:3000/api/books/"宇宙兄弟"
+
+# 6-2: Browser reload(get)
+# -> assume to JSON of 4 books excluding name:"宇宙兄弟"
+
+# THAT'S ALL!
