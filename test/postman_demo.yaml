@@ -1,57 +1,69 @@
 ## Demo Procedure
 
-# 1: Browser access(GET)
+# 0: Run server
+# npm start
+
+# 1-1: Postman GET access
 # http://localhost:3000/api/books
-# -> assume to JSON of 5 books
+# -> assume to JSON of 13 books
+
+# 1-2: Browser access(GET)
+# http://localhost:3000/api/books
+# -> assume to JSON of 13 books
 
 # 2-1: Postman POST a book to add to library
 # http://localhost:3000/api/books
 # "Body" -> "raw" -> "JSON" -> below book
 {
   "id": 100,
-  "name": "sample for test",
-  "genre": "test",
-  "recommender_name": "test"
+  "name": "シャングリラフロンティア",
+  "genre": "fantasy",
+  "recommender_name": "Nakamura Yoshiki",
+  "recommender_memo": "アバターを使ってフルダイブ型のゲームを楽しんでるマンガ。絶賛アニメ放送中だが見たことない（マンガ派）。推しキャラはエムル"
 }
 # 2-2: Browser reload(GET)
-# -> assume to JSON of 6 books including id:100
+# -> assume to JSON of 14 books including id:100
 
 # 3-1: Postman PUT a book to update by ID
 # http://localhost:3000/api/books/100
 # "Body" -> "raw" -> "JSON" -> below book
 {
   "id": 200,
-  "name": "SAMPLE FOR TEST",
-  "genre": "TEST",
-  "recommender_name": "TEST"
+  "name": "シャングリラ・フロンティア",
+  "genre": "fantasy",
+  "recommender_name": "Nakamura Yoshiki",
+  "recommender_memo": "アバターを使ってフルダイブ型のゲームを楽しんでるマンガ。王道的な面白さ。Vision Proが進化して早くこんな感じになってほしい…。推しキャラはペンシルゴン、シルヴィ"
 }
 
 # 3-2: Browser reload(GET)
-# -> assume to JSON of 6 books including id:200, excluding id:100
+# -> assume to JSON of 14 books including id:200, excluding id:100
 
 # 4-1: Postman PUT a book to update by NAME
-# http://localhost:3000/api/books/SAMPLE%20FOR%20TEST
+# http://localhost:3000/api/books/シャングリラ・フロンティア
 # "Body" -> "raw" -> "JSON" -> below book
 {
-  "id": 100,
-  "name": "sample for test",
-  "genre": "test",
-  "recommender_name": "test"
+  "id": 200,
+  "name": "シャングリラ・フロンティア",
+  "genre": "fantasy",
+  "recommender_name": "Yoshiki Nakamura",
+  "recommender_memo": "アバターを使ってフルダイブ型のゲームを楽しんでるマンガ。王道的な面白さ。Vision Proが進化して早くこんな感じになってほしい…。推しキャラはペンシルゴン、シルヴィ"
 }
 
 # 4-2: Browser reload(GET)
-# -> assume to JSON of 6 books including "sample for test", excluding id:"SAMPLE FOR TEST"
+# -> assume to JSON of 14 books including "シャングリラ・フロンティア"(recommender_name is updated)
 
 # 5-1: Postman DELETE a book to update by ID
-# http://localhost:3000/api/books/100
+# http://localhost:3000/api/books/シャングリラ・フロンティア
 
 # 5-2: Browser reload(get)
-# -> assume to JSON of 5 books excluding id:100
+# -> assume to JSON of 13 books excluding name:"シャングリラ・フロンティア"
 
 # 6-1: Postman DELETE a book to update by ID
-# http://localhost:3000/api/books/"宇宙兄弟"
+# http://localhost:3000/api/books/#
 
 # 6-2: Browser reload(get)
-# -> assume to JSON of 4 books excluding name:"宇宙兄弟"
+# -> assume to JSON of 12 books excluding id:
+
+
 
 # THAT'S ALL!

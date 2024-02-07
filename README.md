@@ -27,12 +27,12 @@ My first solo project
 
 ---
 
-## 時間あれば
+## 未実装
 
 - GET /api/books/recommender/:name - 本の一覧から、特定の推薦者が推薦した本を抜粋し、JSON で返す（SELECT）
 - PATCH /api/books/:idOrName - 対象の本の情報を、JSON で渡した body に部分更新（UPDATE）
 
-# DB 設定
+# DB 構築
 
 - createdb rm_library
 - npm run migrate

@@ -32,14 +32,6 @@ exports.seed = async function (knex) {
     },
     {
       id: 9,
-      name: "宇宙兄弟",
-      genre: "home",
-      recommender_name: "Tsubasa Kouta",
-      recommender_memo:
-        "実家の田んぼの整地問題から、家族に「Home」を教えてもらった作品（39巻より）。Code Chrysalisが我々のHOMEになるか…",
-    },
-    {
-      id: 10,
       name: "信じていた仲間達にダンジョン奥地で殺されかけたがギフト『無限ガチャ』でレベル9999の仲間達を手に入れて元パーティーメンバーと世界に復讐＆『ざまぁ！』します",
       genre: "tensei",
       recommender_name: "Yoshiki Nakamura",
@@ -47,12 +39,20 @@ exports.seed = async function (knex) {
         "最近はやりの転生系マンガ。超強い相手が超強そうに登場してくるが、主人公サイドに手も足も出ずボコられるのがおもろい。推しキャラはメイ",
     },
     {
-      id: 11,
+      id: 10,
       name: "僕以外全員転生者かよ",
       genre: "tensei",
       recommender_name: "Yoshiki Nakamura",
       recommender_memo:
         "転生系マンガ。転生系でありがちの復讐・無双系と思いきや、超ギャグ系。連載終了してしまったのが残念すぎる。推しキャラは げぺ丸（下の子に激似w）",
+    },
+    {
+      id: 11,
+      name: "宇宙兄弟",
+      genre: "home",
+      recommender_name: "Tsubasa Kouta",
+      recommender_memo:
+        "実家の田んぼの整地問題から、家族に「Home」を教えてもらった作品（39巻より）。Code Chrysalisが我々のHOMEになるか…",
     },
     {
       id: 12,
